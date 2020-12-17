@@ -8,7 +8,7 @@
     border-radius: 2px
 }
 
-    .btn-blue:hover {
+.btn-blue:hover {
         background-color: #00ffff;
         cursor: pointer
     }
@@ -16,4 +16,7 @@
 .bg-blue {
     color: #fff;
     background-color: #1A237E
+}
+.bg-header {
+    background-color: #aecdd6;
 }

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="CSS/BootStrap.css" rel="stylesheet" runat="server" />
     <link href="CSS/Default.css" rel="stylesheet" runat="server" />
+       <link href="CSS/Colors.css" rel="stylesheet" runat="server" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
@@ -18,7 +19,7 @@
     <form id="form1" runat="server">
 
         <div class="container-fluid px-1 px-md-5 px-lg-1  mx-auto">
-            <div class="bg-primary py-3">
+            <div class="bg-header py-3">
                 <div class="row px-3">
                     <h1>Online Test System</h1>
                 </div>
@@ -67,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-primary py-3">
+                <div class="bg-header py-3">
                     <div class="row px-3">
                         <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2020.</small>
                         <div class="social-contact ml-4 ml-sm-auto"><span class="fa fa-facebook mr-4 text-sm"></span><span class="fa fa-google-plus mr-4 text-sm"></span><span class="fa fa-linkedin mr-4 text-sm"></span><span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span></div>

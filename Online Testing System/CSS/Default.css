@@ -5,9 +5,7 @@
     background-color: #35344d;
     background-repeat: no-repeat
 }
-
 .card0 {
-    box-shadow: 0px 4px 8px 0px #000;
     border-radius: 0px
 }
 
@@ -49,24 +47,9 @@
     font-size: 14px !important
 }
 
-::placeholder {
-    color: #BDBDBD;
-    opacity: 1;
-    font-weight: 300
-}
 
-:-ms-input-placeholder {
-    color: #BDBDBD;
-    font-weight: 300
-}
 
-::-ms-input-placeholder {
-    color: #BDBDBD;
-    font-weight: 300
-}
-
-input,
-textarea {
+input,textarea {
     padding: 10px 12px 10px 12px;
     border: 1px solid lightgrey;
     border-radius: 2px;
@@ -98,23 +81,6 @@ button:focus {
 a {
     color: inherit;
     cursor: pointer
-}
-
-.btn-blue {
-    background-color: #1A237E;
-    width: 150px;
-    color: #fff;
-    border-radius: 2px
-}
-
-    .btn-blue:hover {
-        background-color: #00ffff;
-        cursor: pointer
-    }
-
-.bg-blue {
-    color: #fff;
-    background-color: #1A237E
 }
 
 @media screen and (max-width: 991px) {
