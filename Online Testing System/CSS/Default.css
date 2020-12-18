@@ -46,9 +46,33 @@
 .text-sm {
     font-size: 14px !important
 }
+.drop-down {
+    display: block;
+    width: 100%;
+    padding: 10px 12px 10px 12px;
+    border: 1px solid lightgrey;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #2C3E50;
+    vertical-align: middle;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
 
-
-
+    .drop-down:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid #304FFE;
+        outline-width: 0
+    }
 input,textarea {
     padding: 10px 12px 10px 12px;
     border: 1px solid lightgrey;
