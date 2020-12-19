@@ -56,8 +56,8 @@
                                 </asp:DropDownList>
                             </div>
                             <div class="col">
-                                <asp:Label class="" ID="Label1" runat="server" Text="Select Semester"></asp:Label>
-                                <asp:DropDownList class="drop-down" ID="DropDownList1" runat="server">
+                                <asp:Label class="" ID="DD_Semester" runat="server" Text="Select Semester"></asp:Label>
+                                <asp:DropDownList class="drop-down" ID="SemesterDropDown" runat="server">
                                     <asp:ListItem>Select Semester</asp:ListItem>
                                     <asp:ListItem>1</asp:ListItem>
                                     <asp:ListItem>2</asp:ListItem>
@@ -82,11 +82,12 @@
                         <asp:CompareValidator ID="Password_Compare" runat="server" ErrorMessage="Password does not match" ControlToCompare="TB_Password" ControlToValidate="TB_ConfirmPassword" CssClass="auto-style1"></asp:CompareValidator>
                     </div>
                     <div class="align-items-center">
-                        <asp:Button class="btn btn-blue" ID="Button1" runat="server" Text="Register" />
+                        <asp:Button class="btn btn-blue" ID="BTN_Register" runat="server" Text="Register" OnClick="BTN_Register_Click" />
                     </div>
                 </div>
 
                 <a href="Default.aspx">Go Back To Login</a>
+                <a href="AdminPanel.aspx">Show Users</a>
             </div>
             <div class="bg-header py-3">
                 <div class="row px-3">
