@@ -30,11 +30,11 @@ public partial class _Default : System.Web.UI.Page
             if (password==TB_Password.Text)
             {
                 Session["UserEmail"] = TB_Email.Text;
-                Response.Redirect("UserPage.aspx");
+                Response.Redirect("PagesUser/UserPage.aspx");
             }
             else
             {
-                Response.Write("<h1>Login Failed</h1>");
+                FailedLabel.Text = "Login Failed! Check Username and Password";
             }
             conn.Close();
         }

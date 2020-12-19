@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="CSS/BootStrap.css" rel="stylesheet" />
-    <link href="CSS/Colors.css" rel="stylesheet" type="text/css" runat="server" />
-    <link href="CSS/Default.css" rel="stylesheet" type="text/css" runat="server" />
+    <link href="~/CSS/BootStrap.css" rel="stylesheet" />
+    <link href="~/CSS/Colors.css" rel="stylesheet" type="text/css" runat="server" />
+    <link href="~/CSS/Default.css" rel="stylesheet" type="text/css" runat="server" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
@@ -86,8 +86,8 @@
                     </div>
                 </div>
 
-                <a href="Default.aspx">Go Back To Login</a>
-                <a href="AdminPanel.aspx">Show Users</a>
+                <a href="../Default.aspx">Go Back To Login</a>
+                <a href="../PagesAdmin/AdminPanel.aspx">Show Users</a>
             </div>
             <div class="bg-header py-3">
                 <div class="row px-3">
@@ -97,6 +97,6 @@
             </div>
         </div>
     </form>
-    <script src="JavaScript/BootStrap5.js"></script>
+    <script src="~/JavaScript/BootStrap5.js"></script>
 </body>
 </html>

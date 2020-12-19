@@ -60,11 +60,13 @@
                                 <asp:TextBox ID="TB_Password" type="email" runat="server" class="userEmail" placeholder="Enter your password" TextMode="Password"></asp:TextBox>
                                 <asp:RequiredFieldValidator class="mb-3" ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please Enter Your Password" ControlToValidate="TB_Password" CssClass="auto-style1"></asp:RequiredFieldValidator>
                             </div>
-
+                            <strong>
+                            <asp:Label ID="FailedLabel" runat="server" Text="" CssClass="auto-style1"></asp:Label>
+                            </strong>
                             <div class="row mb-3 px-3 my-3">
                                 <asp:Button ID="BTN_Login" runat="server" class="btn btn-blue text-center" Text="Login" OnClick="Login_Click" />
                             </div>
-                            <div class="row mb-4 px-3"><small class="font-weight-bold">Don't have an account? <a class="text-danger " href="UserRegistration.aspx">Register</a></small> </div>
+                            <div class="row mb-4 px-3"><small class="font-weight-bold">Don't have an account? <a class="text-danger " href="PagesUser/UserRegistration.aspx">Register</a></small> </div>
                         </div>
                     </div>
                 </div>
