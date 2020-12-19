@@ -4,11 +4,39 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Configuration;
+using System.Data.SqlClient;
 public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+    }
+
+    protected void Login_Click(object sender, EventArgs e)
+    {
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ConnectionString);
+        conn.Open();
+        string checkuser = "select count(*) from UserData where email ='" + TB_Email.Text + "'";
+        SqlCommand com1 = new SqlCommand(checkuser, conn);
+        int temp = Convert.ToInt32(com1.ExecuteScalar().ToString());
+        conn.Close();
+        if (temp == 1)
+        {     
+            conn.Open();
+            string checkpassword = "select password from UserData where email ='" + TB_Email.Text + "'";
+            SqlCommand passcom = new SqlCommand(checkpassword, conn);
+            string password = passcom.ExecuteScalar().ToString().Replace(" ","");
+            if (password==TB_Password.Text)
+            {
+                Session["UserEmail"] = TB_Email.Text;
+                Response.Redirect("UserPage.aspx");
+            }
+            else
+            {
+                Response.Write("<h1>Login Failed</h1>");
+            }
+            conn.Close();
+        }
     }
 }

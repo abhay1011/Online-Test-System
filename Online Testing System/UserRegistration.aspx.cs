@@ -12,20 +12,6 @@ public partial class UserRegistration : System.Web.UI.Page
     {
 
         ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-        if (IsPostBack)
-        {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ConnectionString);
-            conn.Open();
-            string checkuser = "select count(*) from UserData where name ='"+TB_Name.Text+"'";
-            SqlCommand com = new SqlCommand(checkuser, conn);
-            int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
-            Response.Write(temp);
-            if (temp == 1)
-            {
-                Response.Write("user Already Exist");
-            }
-            conn.Close();
-        }
     }
 
     protected void BTN_Register_Click(object sender, EventArgs e)
@@ -41,27 +27,27 @@ public partial class UserRegistration : System.Web.UI.Page
             Response.Write("<h1>User Already Exis</h1>");
         }
         else { 
-            try
-            {
+                try
+                {
             
-                string insertQuery = "insert into UserData (name,rollno,email,course,semester,password) values(@name,@rollno,@email,@course,@semester,@password)";
-                SqlCommand com = new SqlCommand(insertQuery, conn);
-                com.Parameters.AddWithValue("@name", TB_Name.Text);
-                com.Parameters.AddWithValue("@rollno", TB_RollNo.Text);
-                com.Parameters.AddWithValue("@email", TB_Email.Text);
-                com.Parameters.AddWithValue("@course", CourseDropDown.SelectedItem.ToString());
-                com.Parameters.AddWithValue("@semester", SemesterDropDown.SelectedItem.ToString());
-                com.Parameters.AddWithValue("@password", TB_Password.Text);
-                com.ExecuteNonQuery();
-                //   Response.Redirect("AdminPanel.aspx");
-                Response.Write("<h1>Registration is Successfull</h1>");
+                    string insertQuery = "insert into UserData (name,rollno,email,course,semester,password) values(@name,@rollno,@email,@course,@semester,@password)";
+                    SqlCommand com = new SqlCommand(insertQuery, conn);
+                    com.Parameters.AddWithValue("@name", TB_Name.Text);
+                    com.Parameters.AddWithValue("@rollno", TB_RollNo.Text);
+                    com.Parameters.AddWithValue("@email", TB_Email.Text);
+                    com.Parameters.AddWithValue("@course", CourseDropDown.SelectedItem.ToString());
+                    com.Parameters.AddWithValue("@semester", SemesterDropDown.SelectedItem.ToString());
+                    com.Parameters.AddWithValue("@password", TB_Password.Text);
+                    com.ExecuteNonQuery();
+                    //   Response.Redirect("AdminPanel.aspx");
+                    Response.Write("<h1>Registration is Successfull</h1>");
             
+                }
+                catch (Exception ex)
+                {
+                    Response.Write(ex.ToString());
+                }
             }
-            catch (Exception ex)
-            {
-                Response.Write(ex.ToString());
-            }
-    }
         conn.Close();
     }
 }

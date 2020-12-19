@@ -62,7 +62,7 @@
                             </div>
 
                             <div class="row mb-3 px-3 my-3">
-                                <asp:Button ID="Button1" runat="server" class="btn btn-blue text-center" Text="Login" />
+                                <asp:Button ID="BTN_Login" runat="server" class="btn btn-blue text-center" Text="Login" OnClick="Login_Click" />
                             </div>
                             <div class="row mb-4 px-3"><small class="font-weight-bold">Don't have an account? <a class="text-danger " href="UserRegistration.aspx">Register</a></small> </div>
                         </div>
