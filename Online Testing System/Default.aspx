@@ -25,8 +25,7 @@
                 </div>
             </div>
             <div class="card card0 border-0">
-                <div class="row d-flex">
-
+                <div class="row">
                     <div class="col-lg-6">
                         <div class="card1 pb-5">
                             <div class="row">
