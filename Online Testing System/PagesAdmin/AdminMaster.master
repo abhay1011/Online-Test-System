@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/HeaderFooterMaster.master" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="PagesAdmin_AdminMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeaderPlaceHolder" runat="Server">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1>Online Test System</h1>
+            </div>
+            <div class="col-5">
+                <asp:Label ID="Name_Label" runat="server" Text=""></asp:Label>
+            </div>
+            <div class="col-1">
+                <asp:Button ID="BTN_Logout" runat="server" Text="Logout" OnClick="BTN_Logout_Click" />
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceholder" runat="Server">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 bg-primary">
+                <div class="row"><a href="AdminPanel.aspx">Home</a></div>
+                <div class="row"> <a href="ManageUser.aspx">Manage User</a></div>      
+                <div class="row"><a href="CreateQuestionPaper.aspx">Create Question Paper</a></div>
+            </div>
+            <div class="col-lg-9 bg-info px-3 py-3 ">
+                <asp:ContentPlaceHolder ID="AdminContentPlaceholder" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+

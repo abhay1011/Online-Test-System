@@ -17,7 +17,7 @@
 </head>
 <body class="">
     <form id="form1" runat="server">
-        <div class="container-fluid px-1 px-md-5 px-lg-1  mx-auto">
+        <div class="container-fluid px-1 px-lg-1  mx-auto">
             <div class="bg-header py-3">
                 <div class="row px-3">
                     <asp:ContentPlaceHolder ID="HeaderPlaceHolder" runat="server">

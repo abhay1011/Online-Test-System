@@ -21,10 +21,9 @@ public partial class UserRegistration : System.Web.UI.Page
         string checkuser = "select count(*) from UserData where email ='" + TB_Email.Text + "'";
         SqlCommand com1 = new SqlCommand(checkuser, conn);
         int temp = Convert.ToInt32(com1.ExecuteScalar().ToString());
-        Response.Write(temp);
-        if (temp == 1)
+        if (temp >= 1)
         {
-            Response.Write("<h1>User Already Exis</h1>");
+            User_Exist_Label.Text = "User Already Exist!,Choose Different Email";
         }
         else { 
                 try
@@ -39,8 +38,8 @@ public partial class UserRegistration : System.Web.UI.Page
                     com.Parameters.AddWithValue("@semester", SemesterDropDown.SelectedItem.ToString());
                     com.Parameters.AddWithValue("@password", TB_Password.Text);
                     com.ExecuteNonQuery();
-                    //   Response.Redirect("AdminPanel.aspx");
-                    Response.Write("<h1>Registration is Successfull</h1>");
+
+                Response.Redirect("~/PagesError/RegistrationSuccessfull.aspx");
             
                 }
                 catch (Exception ex)

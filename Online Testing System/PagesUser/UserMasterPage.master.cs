@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class UserPage : System.Web.UI.Page
+public partial class PagesUser_UserMasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["UserEmail"] != null)
+        if (Session["userName"] != null)
         {
-            Email_Label.Text = "Welcome " + Session["UserEmail"].ToString();
+            Name_Label.Text = "Welcome " + Session["userName"].ToString();
         }
         else
         {
@@ -21,7 +21,7 @@ public partial class UserPage : System.Web.UI.Page
 
     protected void BTN_Logout_Click(object sender, EventArgs e)
     {
-        Session["UserEmail"] = null;
+        Session["userName"] = null;
         Response.Redirect("~/Default.aspx");
     }
 }

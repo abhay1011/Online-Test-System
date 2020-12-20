@@ -44,6 +44,10 @@
                         <asp:Label class="" ID="L_Email" runat="server" Text="Email Address"></asp:Label>
                         <asp:TextBox class="" ID="TB_Email" runat="server" TextMode="Email" placeholder="Enter a valid email address"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="Email_Validator" runat="server" ErrorMessage="Please Enter Your Email Address" ControlToValidate="TB_Email" CssClass="auto-style1"></asp:RequiredFieldValidator>
+                        <br />
+                        <strong>
+                        <asp:Label ID="User_Exist_Label" runat="server" CssClass="auto-style1" Text=""></asp:Label>
+                        </strong>
                     </div>
                     <div class="mb-3 container">
                         <div class="row">
@@ -80,6 +84,7 @@
                         <asp:RequiredFieldValidator ID="Confirm_Password_Required" runat="server" ErrorMessage="Please Confirm Your Password" ClientIDMode="AutoID" ControlToValidate="TB_ConfirmPassword" CssClass="auto-style1"></asp:RequiredFieldValidator>
                         <br />
                         <asp:CompareValidator ID="Password_Compare" runat="server" ErrorMessage="Password does not match" ControlToCompare="TB_Password" ControlToValidate="TB_ConfirmPassword" CssClass="auto-style1"></asp:CompareValidator>
+                        <br />
                     </div>
                     <div class="align-items-center">
                         <asp:Button class="btn btn-blue" ID="BTN_Register" runat="server" Text="Register" OnClick="BTN_Register_Click" />

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="CSS/BootStrap.css" rel="stylesheet" runat="server" />
     <link href="CSS/Default.css" rel="stylesheet" runat="server" />
        <link href="CSS/Colors.css" rel="stylesheet" runat="server" />

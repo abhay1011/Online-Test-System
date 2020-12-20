@@ -5,10 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class PagesAdmin_AdminPanel : System.Web.UI.Page
+public partial class PagesError_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
 
+    }
+
+    protected void BTN_GoLogin_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Default.aspx");
     }
 }

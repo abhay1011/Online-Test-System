@@ -29,14 +29,39 @@ public partial class _Default : System.Web.UI.Page
             string password = passcom.ExecuteScalar().ToString().Replace(" ","");
             if (password==TB_Password.Text)
             {
-                Session["UserEmail"] = TB_Email.Text;
-                Response.Redirect("PagesUser/UserPage.aspx");
+                string userName = "select name from UserData where email ='" + TB_Email.Text + "'";
+                SqlCommand getUserName = new SqlCommand(userName, conn);
+                Session["userName"] = getUserName.ExecuteScalar();
+                Response.Redirect("PagesUser/UserHome.aspx");
             }
             else
             {
                 FailedLabel.Text = "Login Failed! Check Username and Password";
             }
             conn.Close();
+        }
+        else if (temp > 1)
+        {
+            conn.Open();
+            string checkpassword = "select password from UserData where email ='" + TB_Email.Text + "'";
+            SqlCommand passcom = new SqlCommand(checkpassword, conn);
+            string password = passcom.ExecuteScalar().ToString().Replace(" ", "");
+            if (password == TB_Password.Text)
+            {
+                string userName = "select name from UserData where email ='" + TB_Email.Text + "'";
+                SqlCommand getUserName = new SqlCommand(userName, conn);
+                Session["userName"] = getUserName.ExecuteScalar();
+                Response.Redirect("PagesAdmin/AdminPanel.aspx");
+            }
+            else
+            {
+                FailedLabel.Text = "Login Failed! Check Username and Password";
+            }
+            conn.Close();
+        }
+        else
+        {
+            FailedLabel.Text = "Login Failed! Check Username and Password";
         }
     }
 }
