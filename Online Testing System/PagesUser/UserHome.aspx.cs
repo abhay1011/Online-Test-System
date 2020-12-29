@@ -11,4 +11,9 @@ public partial class PagesUser_Default : System.Web.UI.Page
     {
 
     }
+    protected void BTN_TestPaperSelect_Click(object sender, EventArgs e)
+    {
+        Session["UserQuestionPaper"] = DD_SelectQp.SelectedItem;
+        Response.Redirect("QuestionPaper.aspx");
+    }
 }

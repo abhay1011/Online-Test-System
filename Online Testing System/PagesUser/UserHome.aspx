@@ -29,11 +29,11 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="subject" DataValueField="subject">
+                        <asp:DropDownList ID="DD_SelectQp" runat="server" DataSourceID="SqlDataSource1" DataTextField="subject" DataValueField="subject">
                         </asp:DropDownList>
                     </div>
                     <div class="card-footer">
-                        <asp:Button ID="BTM_TestPaperSelect" runat="server" Text="Submit" />
+                        <asp:Button ID="BTN_TestPaperSelect" runat="server" Text="Submit" OnClick="BTN_TestPaperSelect_Click" />
                     </div>
                 </div>
             </div>
