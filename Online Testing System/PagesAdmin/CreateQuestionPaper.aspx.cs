@@ -11,4 +11,10 @@ public partial class PagesAdmin_CreateQuestionPaper : System.Web.UI.Page
     {
 
     }
+
+    protected void AddQuestions_Click(object sender, EventArgs e)
+    {
+        Session["selectedPaper"] = QP_DropDown.SelectedItem;
+        Response.Redirect("AddQuestions.aspx");
+    }
 }

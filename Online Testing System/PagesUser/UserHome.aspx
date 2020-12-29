@@ -23,11 +23,13 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
-                            <h2>Select Test Paper</h2>
+                            <h2>Select Test Paper
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" SelectCommand="SELECT DISTINCT subject FROM QuestionPaper"></asp:SqlDataSource>
+                            </h2>
                         </div>
                     </div>
                     <div class="card-body">
-                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="subject" DataValueField="subject">
                         </asp:DropDownList>
                     </div>
                     <div class="card-footer">

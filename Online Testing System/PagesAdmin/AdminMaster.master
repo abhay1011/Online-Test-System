@@ -7,7 +7,10 @@
                 <h1>Online Test System</h1>
             </div>
             <div class="col-5">
+                <h2>
                 <asp:Label ID="Name_Label" runat="server" Text=""></asp:Label>
+                    
+                </h2>
             </div>
             <div class="col-1">
                 <asp:Button ID="BTN_Logout" runat="server" Text="Logout" OnClick="BTN_Logout_Click" />
@@ -15,19 +18,21 @@
         </div>
     </div>
     <asp:ContentPlaceHolder ID="AdminHeaderPlaceholder" runat="server">
-
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceholder" runat="Server">
     <div class="container-fluid">
         <div class="row d-flex">
             <div class="col-3 bg-primary card px-3 align-content-center justify-content-center">
-                <div class="row p-3"><a href="AdminPanel.aspx">Home</a></div>
-                <div class="row p-3"> <a href="ManageUser.aspx">Manage User</a></div>      
+                <div class="row p-3 mt-5 pt-5"><a href="AdminPanel.aspx">Home</a></div>
+                <div class="row p-3"> <a href="ManageUser.aspx">Manage Users</a></div>      
                 <div class="row p-3"><a href="CreateQuestionPaper.aspx">Create Question Paper</a></div>
+                <div class="row p-3"><a href="DeleteQuestionPaper.aspx">Delete Question Paper</a></div>
+                <div class="row p-3"><a href="CreateQuestionPaper.aspx">View Examination Data</a></div>
             </div>
             <div class="col-9 bg-light px-3 py-3">
                 <asp:ContentPlaceHolder ID="AdminContentPlaceholder" runat="server">
+                
                 </asp:ContentPlaceHolder>
             </div>
         </div>
