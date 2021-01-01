@@ -16,11 +16,11 @@
                         <ItemTemplate>
                             <div class="card">
                                 <div class="card-header">
-                                    <asp:Label ID="lblid" runat="server" Text='<%# Eval("id") %>' Visible="true"></asp:Label>
+                                    <asp:Label ID="Label_Qid" runat="server" Text='<%# Eval("id") %>' Visible="true"></asp:Label>
                                     <asp:Label ID="lbl_question" runat="server" Text='<%# Eval("Question") %>'></asp:Label>
                                 </div>
                                 <div class="card-body container">
-                                    <div class="row m-1 bg-info ">
+                                    <div class="row m-1">
                                         <div class="col-10">
                                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("option1") %>'></asp:Label>
                                         </div>
@@ -28,7 +28,7 @@
                                             <asp:RadioButton GroupName="a" ID="option1" runat="server" />
                                         </div>
                                     </div>
-                                    <div class="row m-1 bg-info">
+                                    <div class="row m-1">
                                         <div class="col-10">
                                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("option2") %>'></asp:Label>
                                         </div>
@@ -36,7 +36,7 @@
                                             <asp:RadioButton GroupName="a" ID="option2" runat="server" />
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row m-1">
                                         <div class="col-10">
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("option3") %>'></asp:Label>
                                         </div>
@@ -44,7 +44,7 @@
                                             <asp:RadioButton GroupName="a" ID="option3" runat="server" />
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row m-1">
                                         <div class="col-10">
                                             <asp:Label ID="Label4" runat="server" Text='<%# Eval("option4") %>'></asp:Label>
                                         </div>
@@ -63,7 +63,7 @@
             <br />
         </div>
         <div>
-            <asp:Button ID="BTN_QP_Submit" runat="server" Text="Submit" />
+            <asp:Button ID="BTN_QP_Submit" runat="server" Text="Submit" OnClick="BTN_QP_Submit_Click" />
         </div>
 </div>
 </asp:Content>

@@ -8,6 +8,8 @@
     <link href="~/CSS/BootStrap.css" rel="stylesheet" />
     <link href="~/CSS/Colors.css" rel="stylesheet" type="text/css" runat="server" />
     <link href="~/CSS/Default.css" rel="stylesheet" type="text/css" runat="server" />
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jura:wght@700&family=Russo+One&display=swap" rel="stylesheet"/>
     <title></title>
     <style type="text/css">
         .auto-style1 {
@@ -92,7 +94,6 @@
                 </div>
 
                 <a href="../Default.aspx">Go Back To Login</a>
-                <a href="../PagesAdmin/AdminPanel.aspx">Show Users</a>
             </div>
             <div class="bg-header py-3">
                 <div class="row px-3">

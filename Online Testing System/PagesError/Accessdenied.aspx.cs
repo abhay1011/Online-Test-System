@@ -9,7 +9,7 @@ public partial class PagesError_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Response.Redirect("~/Default.aspx");
     }
 
     protected void BTN_Login_Click(object sender, EventArgs e)

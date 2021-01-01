@@ -10,6 +10,8 @@
         <div class="card-body">
             <ul>
                 <li>Total Registerd User</li>
+                <li>Total Active Question Paper</li>
+                <li>Total Test Attempted</li>
             </ul>
         </div>
     </div>

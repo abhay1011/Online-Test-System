@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="CSS/BootStrap.css" rel="stylesheet" runat="server" />
     <link href="CSS/Default.css" rel="stylesheet" runat="server" />
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jura:wght@700&family=Russo+One&display=swap" rel="stylesheet"/>
        <link href="CSS/Colors.css" rel="stylesheet" runat="server" />
     <title></title>
     <style type="text/css">
@@ -39,7 +41,7 @@
 
                     <div class="col-lg-6">
                         <div class="card2 card border-0 px-4 py-5">
-                            <h1>System Login</h1>
+                            <h1 class="C_font">System Login</h1>
                             <div class="row px-3 mb-4">
 
                                 <div class="line"></div>
