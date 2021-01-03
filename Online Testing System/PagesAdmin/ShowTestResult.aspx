@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeaderPlaceholder" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceholder" Runat="Server">
-    <div>
+    <div class="">
         <asp:GridView HorizontalAlign="Center" CssClass="table table-condensed table-hover" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
@@ -20,10 +20,11 @@
                 <asp:BoundField DataField="UnattemptedQuestions" HeaderText="Not Answered" SortExpression="UnattemptedQuestions" />
                 <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
             </Columns>
-            <EditRowStyle BackColor="#999999" />
+            
             <EmptyDataTemplate>
                 <h1><span class="auto-style1"><strong>No one has taken the test yet!</strong></span></h1>
             </EmptyDataTemplate>
+            <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"  />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" HorizontalAlign="Center"/>
             <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />

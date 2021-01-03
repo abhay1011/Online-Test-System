@@ -15,7 +15,7 @@ public partial class PagesAdmin_AdminMaster : System.Web.UI.MasterPage
           }
           else
           {
-              Response.Redirect("~/PagesError/Accessdenied.aspx");
+              Response.Redirect("~/Default.aspx");
           } 
     }
 

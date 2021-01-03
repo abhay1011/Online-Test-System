@@ -8,6 +8,7 @@
     <link href="~/CSS/BootStrap.css" rel="stylesheet" />
     <link href="~/CSS/Colors.css" rel="stylesheet" type="text/css" runat="server" />
     <link href="~/CSS/Default.css" rel="stylesheet" type="text/css" runat="server" />
+    <link href="~/CSS/UserMaster.css" rel="stylesheet" type="text/css" runat="server" />
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jura:wght@700&family=Russo+One&display=swap" rel="stylesheet"/>
     <title></title>
@@ -21,15 +22,15 @@
     <form id="form1" runat="server">
         <div class="container-fluid px-1 px-md-5 px-lg-1  mx-auto">
             <div class="bg-header py-3">
-                <div class="row px-3">
-                    <h1>Online Test System</h1>
+                <div class="row px-3 ">
+                    <h1 class="headWhite fontSanSerif">Online Test System</h1>
                     <div class="social-contact ml-4 ml-sm-auto"><span class="fa fa-facebook mr-4 text-sm"></span><span class="fa fa-google-plus mr-4 text-sm"></span><span class="fa fa-linkedin mr-4 text-sm"></span><span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span></div>
                 </div>
             </div>
-            <div class="card border-0 align-items-center card0 bg-white">
-                <div class="card-body bg-light my-3">
+            <div class="card border-0 align-items-center bg-white">
+                <div class="card-body bg-light my-3 pictureShadow">
                     <div class="card-title">
-                        <h1>Online Test Registration</h1>
+                        <h2 class=" fontSanSerif">Online Test Registration</h2>
                         <div class="line"></div>
                     </div>
                     <div class="mb-3">

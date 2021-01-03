@@ -3,7 +3,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminHeaderPlaceholder" runat="Server">
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminContentPlaceholder" runat="Server">
-    <div class="card">
+    <div class="card  coverPic">
         <div class="card-header">
             <h3>Manage user</h3>
         </div>

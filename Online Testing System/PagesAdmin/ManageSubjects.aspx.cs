@@ -42,6 +42,7 @@ public partial class PagesAdmin_ManageSubjects : System.Web.UI.Page
         {
             Response.Write(ex.Message);
         }
+        Response.Redirect("ManageSubjects.aspx");
     }
 
 }

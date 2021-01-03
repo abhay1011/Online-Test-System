@@ -50,8 +50,8 @@ public partial class PagesAdmin_AddQuestions : System.Web.UI.Page
         {
 
             con.Open();
-            insertQuery = "insert into QuestionPaper (Question,option1,option2,option3,option4,answer,subject) " +
-                "values(@question,@option1,@option2,@option3,@option4,@answer,@subject)";
+            insertQuery = "insert into QuestionPaper (Question,option1,option2,option3,option4,answer,subject,duration) " +
+                "values(@question,@option1,@option2,@option3,@option4,@answer,@subject,@duration)";
             SqlCommand com = new SqlCommand(insertQuery, con);
             com.Parameters.AddWithValue("@question",TB_Question.Text);
             com.Parameters.AddWithValue("@option1",TextBox1.Text);
@@ -60,6 +60,7 @@ public partial class PagesAdmin_AddQuestions : System.Web.UI.Page
             com.Parameters.AddWithValue("@option4", TextBox4.Text);
             com.Parameters.AddWithValue("@answer", ans);
             com.Parameters.AddWithValue("@subject", Session["selectedPaper"].ToString());
+            com.Parameters.AddWithValue("@duration", Session["duration"].ToString());
             com.ExecuteNonQuery();
             TB_Question.Text = "";
             TextBox1.Text = "";

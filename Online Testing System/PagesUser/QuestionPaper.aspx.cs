@@ -21,17 +21,22 @@ public partial class PagesUser_QuestionPaper : System.Web.UI.Page
             Label_QP_Name.Text = Session["UserQuestionPaper"].ToString();
           
         }
+        else
+        {
+            Response.Redirect("UserHome.aspx");
+        }
 
     }
     public void generateQuestions()
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ConnectionString);
         con.Open();
-        string questionQry= "Select * from QuestionPaper where subject ='" + Session["UserQuestionPaper"].ToString() + "'";
-        SqlCommand cmd = new SqlCommand(questionQry, con);
+
             try
             {
-                SqlDataReader rd = cmd.ExecuteReader();
+            string questionQry = "Select * from QuestionPaper where subject ='" + Session["UserQuestionPaper"].ToString() + "'";
+            SqlCommand cmd = new SqlCommand(questionQry, con);
+            SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.HasRows)
                 {
                 GridView_Questions.DataSource = rd;

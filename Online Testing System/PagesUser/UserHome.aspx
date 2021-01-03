@@ -4,7 +4,7 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="UserPageContentPlaceholder" runat="Server">
-    <div class="container-fluid p-3">
+    <div class="container-fluid p-3 ">
         <div class="row">
             <div class="col-5">
                 <div class="card border-0">
@@ -19,8 +19,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-7">
-                <div class="card">
+            <div class="col-7 ">
+                <div class="card coverPic">
                     <div class="card-header">
                         <div class="card-title">
                             <h2>Select Test Paper

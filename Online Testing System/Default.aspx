@@ -41,7 +41,7 @@
 
                     <div class="col-lg-6">
                         <div class="card2 card border-0 px-4 py-5">
-                            <h1 class="C_font">System Login</h1>
+                            <h1 class="C_font fontSanSerif">System Login</h1>
                             <div class="row px-3 mb-4">
 
                                 <div class="line"></div>
@@ -51,7 +51,7 @@
                                 <label class="mb-1">
                             Email Address
                                 </label>
-                                <asp:TextBox ID="TB_Email" type="email" runat="server" placeholder="Enter a valid email address" TextMode="Email"></asp:TextBox>
+                                <asp:TextBox cs ID="TB_Email" type="email" runat="server" placeholder="Enter a valid email address" TextMode="Email"></asp:TextBox>
                                 <asp:RequiredFieldValidator class="pb-3 m-lg-3" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please Enter Your Email Address" ControlToValidate="TB_Email" CssClass="auto-style1"></asp:RequiredFieldValidator>
                             </div>
                             <div class="row px-3">

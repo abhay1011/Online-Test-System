@@ -3,8 +3,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadTagPlaceholder" runat="Server">
     <link href="/CSS/AdminMaster.css" rel="stylesheet" type="text/css" runat="server" />
     <link href="/CSS/SideNav.css" rel="stylesheet" type="text/css" runat="server" />
-    <asp:ContentPlaceHolder ID="AdminHeadTagPlaceholder" runat="server">
+    <style>
+        .logoutBtn{
+            color:brown;
+            float: right;
+            font-size: 20px;
+            border:none;
+            background-color:none;
+        }
+        .logoutBtn:hover{
+            color:red;
+             transform: scale(1.01);
+        }
 
+    </style>
+    <asp:ContentPlaceHolder ID="AdminHeadTagPlaceholder" runat="server">
     </asp:ContentPlaceHolder>
 </asp:Content>
 
@@ -13,12 +26,11 @@
         <div class="row">
             <div class="col-6 p-3">
                 <h1 class="fontSanSerif">Online Test System</h1>
+                <asp:Label Style="float: right;" ID="Name_Label" runat="server" Text="" Visible="false"></asp:Label>
             </div>
-            <div class="col-3">
-                <asp:Label ID="Name_Label" runat="server" Text=""></asp:Label>
-            </div>
-            <div class="col-3 right">
-                <button type="button" class="btn  btn-lg btn-danger " onserverclick="BTN_Logout_Click" runat="server"  causesvalidation="false"
+            <div class="col-6 ">
+
+                <button  type="button"  class="logoutBtn pt-4 " onserverclick="BTN_Logout_Click" runat="server" causesvalidation="false"
                     id="BTN_Logout">
                     <span class="fas fa-sign-out-alt"></span>&nbsp;Logout
                 </button>
@@ -32,12 +44,13 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <div class="wrapper">
         <div class="sidebar">
-
+            <h2>Admin Panel</h2>
             <ul>
                 <li><a href="AdminPanel.aspx"><i class="fas fa-home"></i>Home</a></li>
                 <li><a href="ManageUser.aspx"><i class="fas fa-user"></i>Manage Users</a></li>
                 <li><a href="ManageSubjects.aspx"><i class="fas fa-book"></i>Manage Subjects</a></li>
                 <li><a href="CreateQuestionPaper.aspx"><i class="fas fa-plus-circle">Create Question Paper</i></a></li>
+                <li><a href="ManageQuestionPaper.aspx"><i class="fas fa-plus-circle">Manage Question Paper</i></a></li>
                 <li><a href="ShowTestResult.aspx"><i class="fas fa-poll"></i>Test Result</a></li>
             </ul>
             <div class="social_media">
@@ -48,11 +61,8 @@
         </div>
         <div class="main_content info scroll">
             <asp:ContentPlaceHolder ID="AdminContentPlaceholder" runat="server">
-
             </asp:ContentPlaceHolder>
         </div>
     </div>
-
-
 </asp:Content>
 

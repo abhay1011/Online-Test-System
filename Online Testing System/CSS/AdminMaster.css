@@ -33,6 +33,7 @@ a:link{
     }
 
 input, textarea {
+    width:80%;
     padding: 10px 12px 10px 12px;
     border: 1px solid lightgrey;
     border-radius: 2px;
@@ -40,7 +41,7 @@ input, textarea {
     margin-top: 2px;
     box-sizing: border-box;
     color: #2C3E50;
-    font-size: 14px;
+    font-size: 7px;
     letter-spacing: 1px;
     font-family: 'IBM Plex Sans', sans-serif;
 }
@@ -85,6 +86,7 @@ tr:nth-child(odd) {
     width: 300px;
     overflow: auto;
     white-space: nowrap;
+    background-color:white;
 }
 
 .fontSanSerif {
@@ -92,4 +94,14 @@ tr:nth-child(odd) {
 }
 .right{
     float:right;
+}
+/*Cover CSS*/
+.coverPic {
+    position: relative;
+    height: 100vh;
+    display: flex;
+}
+
+.centeredPic {
+    position: absolute;
 }

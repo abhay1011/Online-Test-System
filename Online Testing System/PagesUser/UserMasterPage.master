@@ -1,28 +1,35 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/HeaderFooterMaster.master" AutoEventWireup="true" CodeFile="UserMasterPage.master.cs" Inherits="PagesUser_UserMasterPage" %>
 <asp:Content ID="Content0" ContentPlaceHolderID="HeadTagPlaceholder" Runat="Server">
      <link href="/CSS/UserMaster.css" rel="stylesheet" type="text/css" runat="server" />
+    <link href="/CSS/SideNav.css" rel="stylesheet" type="text/css" runat="server" />
+        <style>
+        .logoutBtn{
+            color:brown;
+            float: right;
+            font-size: 20px;
+            border:none;
+            background-color:none;
+        }
+        .logoutBtn:hover{
+            color:red;
+             transform: scale(1.01);
+        }
+
+    </style>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeaderPlaceHolder" runat="Server">
     <div class="container">
         <div class="row">
-            <div class="col-6">
-                <h1>Online Test System</h1>
+            <div class="col-6 p-3">
+                <h1 class="fontSanSerif">Online Test System</h1>
+                <asp:Label Style="float: right;" ID="Name_Label" runat="server" Text="" Visible="true"></asp:Label>
             </div>
-            <div class="col-3">
-            </div>
-            <div class="col-3">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6 pt-3 avatar">
-                            <asp:Label ID="Name_Label" runat="server" Text=""></asp:Label>
-                        </div>
-                        <div class="col-6">
-                            <asp:Button ID="BTN_Logout" runat="server" Text="Logout" OnClick="BTN_Logout_Click" />
-                        </div>
-                    </div>
+            <div class="col-6 ">
 
-                </div>
-
+                <button  type="button"  class="logoutBtn pt-4 " onserverclick="BTN_Logout_Click" runat="server" causesvalidation="false"
+                    id="BTN_Logout">
+                    <span class="fas fa-sign-out-alt"></span>&nbsp;Logout
+                </button>
             </div>
         </div>
     </div>
@@ -31,6 +38,7 @@
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceholder" runat="Server">
+       <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <asp:ContentPlaceHolder ID="UserPageContentPlaceholder" runat="server">
     </asp:ContentPlaceHolder>
 </asp:Content>

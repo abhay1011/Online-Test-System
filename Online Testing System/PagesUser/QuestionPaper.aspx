@@ -8,6 +8,8 @@
             <h2>
                 <asp:Label ID="Label_QP_Name" runat="server" Text=""></asp:Label>
             </h2>
+            <asp:Timer ID="Timer1" runat="server"></asp:Timer>
+
         </div>
         <div class="card-body">
             <asp:GridView ID="GridView_Questions" AutoGenerateColumns="false" runat="server" EnableTheming="False">

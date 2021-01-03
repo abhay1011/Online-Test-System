@@ -48,5 +48,6 @@ public partial class UserRegistration : System.Web.UI.Page
                 }
             }
         conn.Close();
+       // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
     }
 }
