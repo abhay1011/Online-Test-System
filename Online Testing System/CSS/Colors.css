@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: #35344d;
+    background-color: #4b4276;
 }
 .btn-blue {
     background-color: #1A237E;
@@ -18,5 +18,11 @@
     background-color: #1A237E
 }
 .bg-header {
-    background-color: #aecdd6;
+    background-color: #4b4276;
+}
+.headWhite{
+    color:white;
+}
+.headerColor{
+    background-color:aliceblue;
 }

@@ -9,14 +9,14 @@ public partial class PagesAdmin_AdminMaster : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        /*  if (Session["userName"] != null)
+          if (Session["userName"] != null)
           {
               Name_Label.Text = "Welcome " + Session["userName"].ToString();
           }
           else
           {
               Response.Redirect("~/PagesError/Accessdenied.aspx");
-          } */
+          } 
     }
 
     protected void BTN_Logout_Click(object sender, EventArgs e)

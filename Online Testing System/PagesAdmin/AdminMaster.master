@@ -1,45 +1,58 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/HeaderFooterMaster.master" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="PagesAdmin_AdminMaster" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadTagPlaceholder" Runat="Server">
-     <link href="/CSS/AdminMaster.css" rel="stylesheet" type="text/css" runat="server" />
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadTagPlaceholder" runat="Server">
+    <link href="/CSS/AdminMaster.css" rel="stylesheet" type="text/css" runat="server" />
+    <link href="/CSS/SideNav.css" rel="stylesheet" type="text/css" runat="server" />
+    <asp:ContentPlaceHolder ID="AdminHeadTagPlaceholder" runat="server">
+
+    </asp:ContentPlaceHolder>
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="HeaderPlaceHolder" Runat="Server">
-        <div class="container">
+<asp:Content ID="Content2" ContentPlaceHolderID="HeaderPlaceHolder" runat="Server">
+    <div class="container">
         <div class="row">
-            <div class="col-6">
-                <h1>Online Test System</h1>
+            <div class="col-6 p-3">
+                <h1 class="fontSanSerif">Online Test System</h1>
             </div>
-            <div class="col-5">
-                <h2>
+            <div class="col-3">
                 <asp:Label ID="Name_Label" runat="server" Text=""></asp:Label>
-                    
-                </h2>
             </div>
-            <div class="col-1">
-                <asp:Button ID="BTN_Logout" runat="server" Text="Logout" OnClick="BTN_Logout_Click" />
+            <div class="col-3 right">
+                <button type="button" class="btn  btn-lg btn-danger " onserverclick="BTN_Logout_Click" runat="server"  causesvalidation="false"
+                    id="BTN_Logout">
+                    <span class="fas fa-sign-out-alt"></span>&nbsp;Logout
+                </button>
             </div>
         </div>
     </div>
     <asp:ContentPlaceHolder ID="AdminHeaderPlaceholder" runat="server">
     </asp:ContentPlaceHolder>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceholder" Runat="Server">
-        <div class="container-fluid">
-        <div class="row d-flex">
-            <div class="col-2 bg-primary card px-3 align-content-center justify-content-center sideNav">
-                <div class="row p-3"><a href="AdminPanel.aspx">Home</a></div>
-                <div class="row p-3"> <a href="ManageUser.aspx">Manage Users</a></div>      
-                <div class="row p-3"><a href="CreateQuestionPaper.aspx">Create Question Paper</a></div>
-                <div class="row p-3"><a href="ManageQuestionPaper.aspx">Manage Question Paper</a></div>
-                <div class="row p-3"><a href="ShowTestResult.aspx">Show Test Results</a></div>
-            </div>
-            <div class="col-10 bg-light px-3 py-3">
-                <asp:ContentPlaceHolder ID="AdminContentPlaceholder" runat="server">
-                
-                </asp:ContentPlaceHolder>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceholder" runat="Server">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <div class="wrapper">
+        <div class="sidebar">
+
+            <ul>
+                <li><a href="AdminPanel.aspx"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="ManageUser.aspx"><i class="fas fa-user"></i>Manage Users</a></li>
+                <li><a href="ManageSubjects.aspx"><i class="fas fa-book"></i>Manage Subjects</a></li>
+                <li><a href="CreateQuestionPaper.aspx"><i class="fas fa-plus-circle">Create Question Paper</i></a></li>
+                <li><a href="ShowTestResult.aspx"><i class="fas fa-poll"></i>Test Result</a></li>
+            </ul>
+            <div class="social_media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
+        <div class="main_content info scroll">
+            <asp:ContentPlaceHolder ID="AdminContentPlaceholder" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
     </div>
+
+
 </asp:Content>
 

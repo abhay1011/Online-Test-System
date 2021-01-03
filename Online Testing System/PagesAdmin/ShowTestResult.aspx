@@ -4,27 +4,30 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceholder" Runat="Server">
     <div>
-        <asp:GridView runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView HorizontalAlign="Center" CssClass="table table-condensed table-hover" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
-                <asp:BoundField DataField="UserEmail" HeaderText="UserEmail" SortExpression="UserEmail" />
-                <asp:BoundField DataField="UserRollNo" HeaderText="UserRollNo" SortExpression="UserRollNo" />
+                <asp:BoundField DataField="UserName" HeaderText="Name" SortExpression="UserName" />
+                <asp:BoundField DataField="UserEmail" HeaderText="Email" SortExpression="UserEmail" />
+                <asp:BoundField DataField="UserRollNo" HeaderText="RollNo" SortExpression="UserRollNo" />
                 <asp:BoundField DataField="Course" HeaderText="Course" SortExpression="Course" />
                 <asp:BoundField DataField="Semester" HeaderText="Semester" SortExpression="Semester" />
                 <asp:BoundField DataField="Subject" HeaderText="Subject" SortExpression="Subject" />
-                <asp:BoundField DataField="TotalQuestions" HeaderText="TotalQuestions" SortExpression="TotalQuestions" />
-                <asp:BoundField DataField="RightQuestions" HeaderText="RightQuestions" SortExpression="RightQuestions" />
-                <asp:BoundField DataField="WrongQuestions" HeaderText="WrongQuestions" SortExpression="WrongQuestions" />
-                <asp:BoundField DataField="UnattemptedQuestions" HeaderText="UnattemptedQuestions" SortExpression="UnattemptedQuestions" />
+                <asp:BoundField DataField="TotalQuestions" HeaderText="Total" SortExpression="TotalQuestions" />
+                <asp:BoundField DataField="RightQuestions" HeaderText="Right" SortExpression="RightQuestions" />
+                <asp:BoundField DataField="WrongQuestions" HeaderText="Wrong" SortExpression="WrongQuestions" />
+                <asp:BoundField DataField="UnattemptedQuestions" HeaderText="Not Answered" SortExpression="UnattemptedQuestions" />
                 <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
-            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <EmptyDataTemplate>
+                <h1><span class="auto-style1"><strong>No one has taken the test yet!</strong></span></h1>
+            </EmptyDataTemplate>
+            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"  />
+            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" HorizontalAlign="Center"/>
             <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <RowStyle BackColor="#F7F6F3" ForeColor="#333333"  HorizontalAlign="Center"/>
             <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
             <SortedAscendingCellStyle BackColor="#E9E7E2" />
             <SortedAscendingHeaderStyle BackColor="#506C8C" />

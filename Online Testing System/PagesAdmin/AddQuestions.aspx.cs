@@ -19,12 +19,14 @@ public partial class PagesAdmin_AddQuestions : System.Web.UI.Page
             getQuestions = "select count(*) from UserData where email = 'CS_65 Software Engineering'";
             SqlCommand com = new SqlCommand(getQuestions, con);
             Label_totalQuestions.Text = com.ExecuteScalar().ToString();
+            SqlDataSource1.SelectCommand = "SELECT [Id], [Question], [option1], [option2], [option3], [option4], [answer] FROM [QuestionPaper] Where subject ='" + Session["selectedPaper"].ToString() + "'";
         }
-
-
+        else
+        {
+            SqlDataSource1.SelectCommand = "SELECT [Id], [Question], [option1], [option2], [option3], [option4], [answer] FROM [QuestionPaper] Where subject ='hello'";
+        }
         con.Close();
     }
-
     protected void Btn_AddQuestion_Click(object sender, EventArgs e)
     {
         int ans;
@@ -72,5 +74,6 @@ public partial class PagesAdmin_AddQuestions : System.Web.UI.Page
             Response.Write(ex.ToString());
         }
         con.Close();
+        Response.Redirect("AddQuestions.aspx");
     }
 }

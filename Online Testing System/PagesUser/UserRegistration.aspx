@@ -17,7 +17,7 @@
         }
     </style>
 </head>
-<body class="">
+<body  class="">
     <form id="form1" runat="server">
         <div class="container-fluid px-1 px-md-5 px-lg-1  mx-auto">
             <div class="bg-header py-3">

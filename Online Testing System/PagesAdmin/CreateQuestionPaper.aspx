@@ -8,7 +8,7 @@
             <div class="card-body">
                 <div>
                     <asp:Label runat="server" Text="Select Subject"></asp:Label>
-                    <asp:DropDownList ID="QP_DropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="subject" DataValueField="subject"></asp:DropDownList>
+                    <asp:DropDownList CssClass="drop-down" ID="QP_DropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="subject" DataValueField="subject"></asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" SelectCommand="SELECT [subject] FROM [SubjectData]"></asp:SqlDataSource>
                 </div>
             </div>

@@ -1,12 +1,13 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="CSS/BootStrap.css" rel="stylesheet" runat="server" />
     <link href="CSS/Default.css" rel="stylesheet" runat="server" />
+    <link href="CSS/Colors.css" rel="stylesheet" runat="server" />
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jura:wght@700&family=Russo+One&display=swap" rel="stylesheet"/>
        <link href="CSS/Colors.css" rel="stylesheet" runat="server" />
@@ -19,11 +20,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
         <div class="container-fluid px-1 px-md-5 px-lg-1  mx-auto">
             <div class="bg-header py-3">
-                <div class="row px-3">
-                    <h1>Online Test System</h1>
+                <div class="row px-3 ">
+                    <h1 class="headWhite fontSanSerif">Online Test System</h1>
                 </div>
             </div>
             <div class="card card0 border-0">
@@ -49,14 +49,14 @@
                             </div>
                             <div class="row px-3">
                                 <label class="mb-1">
-                                    <h6 class="text-sm">Email Address</h6>
+                            Email Address
                                 </label>
                                 <asp:TextBox ID="TB_Email" type="email" runat="server" placeholder="Enter a valid email address" TextMode="Email"></asp:TextBox>
                                 <asp:RequiredFieldValidator class="pb-3 m-lg-3" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please Enter Your Email Address" ControlToValidate="TB_Email" CssClass="auto-style1"></asp:RequiredFieldValidator>
                             </div>
                             <div class="row px-3">
                                 <label class="mb-1">
-                                    <h6 class="mt-3 text-sm">Password</h6>
+                                    Password
                                 </label>
                                 <asp:TextBox ID="TB_Password" type="email" runat="server" class="userEmail" placeholder="Enter your password" TextMode="Password"></asp:TextBox>
                                 <asp:RequiredFieldValidator class="mb-3" ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please Enter Your Password" ControlToValidate="TB_Password" CssClass="auto-style1"></asp:RequiredFieldValidator>
