@@ -2,8 +2,13 @@
 <asp:Content ID="Content0" ContentPlaceHolderID="HeadTagPlaceholder" Runat="Server">
      <link href="/CSS/UserMaster.css" rel="stylesheet" type="text/css" runat="server" />
     <link href="/CSS/SideNav.css" rel="stylesheet" type="text/css" runat="server" />
+        <asp:ContentPlaceHolder ID="UserHeadTagPlaceholder" runat="server">
+
+    </asp:ContentPlaceHolder>
         <style>
         .logoutBtn{
+            padding:5px;
+            border-radius:5px;
             color:brown;
             float: right;
             font-size: 20px;
@@ -14,22 +19,29 @@
             color:red;
              transform: scale(1.01);
         }
+        .avLabel{
+            float: right;
+                padding:10px;
+        }
 
     </style>
+
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeaderPlaceHolder" runat="Server">
     <div class="container">
         <div class="row">
             <div class="col-6 p-3">
                 <h1 class="fontSanSerif">Online Test System</h1>
-                <asp:Label Style="float: right;" ID="Name_Label" runat="server" Text="" Visible="true"></asp:Label>
+                
             </div>
+            
             <div class="col-6 ">
-
-                <button  type="button"  class="logoutBtn pt-4 " onserverclick="BTN_Logout_Click" runat="server" causesvalidation="false"
+               
+                <button  type="button"  class="logoutBtn mt-4 " onserverclick="BTN_Logout_Click" runat="server" causesvalidation="false"
                     id="BTN_Logout">
                     <span class="fas fa-sign-out-alt"></span>&nbsp;Logout
                 </button>
+                 <asp:Label CssClass="avLabel mt-4 fontSanSerif" ID="Name_Label" runat="server" Text="" Visible="true"></asp:Label>
             </div>
         </div>
     </div>

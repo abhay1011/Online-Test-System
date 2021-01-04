@@ -100,7 +100,7 @@ public partial class PagesUser_QuestionPaper : System.Web.UI.Page
             total++;
         }
         storeData();
-
+        Response.Redirect("ResponseSubmitted.aspx");
     }
     public void checkAnswer(int Qid,int userAns)
     {
@@ -131,10 +131,15 @@ public partial class PagesUser_QuestionPaper : System.Web.UI.Page
         try
         {
 
-            string insertQuery = "insert into ExamData (UserName,Subject,TotalQuestions,RightQuestions,WrongQuestions,UnattemptedQuestions)" +
-                " values(@name,@subject,@total,@right,@wrong,@unattempted)";
+            string insertQuery = "insert into ExamData (Time,UserName,UserEmail,UserRollNo,Course,Semester,Subject,TotalQuestions,RightQuestions,WrongQuestions,UnattemptedQuestions)" +
+                " values(@examdate,@name,@email,@rollno,@course,@semester,@subject,@total,@right,@wrong,@unattempted)";
             SqlCommand com = new SqlCommand(insertQuery, con);
+            com.Parameters.AddWithValue("@examdate", DateTime.Now.ToString());
             com.Parameters.AddWithValue("@name", Session["userName"].ToString());
+            com.Parameters.AddWithValue("@email", Session["userEmail"].ToString());
+            com.Parameters.AddWithValue("@rollno", Session["userRollNo"].ToString());
+            com.Parameters.AddWithValue("@course", Session["userCourse"].ToString());
+            com.Parameters.AddWithValue("@semester", Session["userSemester"].ToString());
             com.Parameters.AddWithValue("@subject", Session["UserQuestionPaper"].ToString());
             com.Parameters.AddWithValue("@total",total);
             com.Parameters.AddWithValue("@right",correct);

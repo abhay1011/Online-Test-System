@@ -5,13 +5,17 @@
     .auto-style2 {
         color: #CC0000;
     }
+    .noBorder{
+        border:none;
+        border-style:none;
+    }
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminHeaderPlaceholder" runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="AdminContentPlaceholder" runat="Server">
     <div>
-        <div class="card">
+        <div class="card coverPic noBorder">
             <div class="card-header">
                 <h3>Manage Question Paper</h3>
             </div>

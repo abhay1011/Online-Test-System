@@ -11,7 +11,7 @@ public partial class PagesAdmin_AdminMaster : System.Web.UI.MasterPage
     {
           if (Session["userName"] != null)
           {
-              Name_Label.Text = "Welcome " + Session["userName"].ToString();
+              Name_Label1.Text = "Hello, " + Session["userName"].ToString();
           }
           else
           {

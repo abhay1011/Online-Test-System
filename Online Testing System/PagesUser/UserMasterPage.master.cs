@@ -11,7 +11,7 @@ public partial class PagesUser_UserMasterPage : System.Web.UI.MasterPage
     {
         if (Session["userName"] != null)
         {
-            Name_Label.Text = Session["userName"].ToString();
+            Name_Label.Text = "Hello, "+Session["userName"].ToString();
         }
         else
         {

@@ -3,11 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminHeaderPlaceholder" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdminContentPlaceholder" Runat="Server">
-    <div class="">
-        <asp:GridView HorizontalAlign="Center" CssClass="table table-condensed table-hover" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
+    <div class="card coverPic scroll " style="width:100%">
+    <div class="card-header"><h3>Test Result</h3></div>
+    <div class="card-body ">
+        <asp:GridView HorizontalAlign="Center" CssClass="table table-condensed table-hover " runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:CommandField ShowDeleteButton="True" />
+                <asp:BoundField DataField="Time" HeaderText="Date" SortExpression="Time" />
                 <asp:BoundField DataField="UserName" HeaderText="Name" SortExpression="UserName" />
                 <asp:BoundField DataField="UserEmail" HeaderText="Email" SortExpression="UserEmail" />
                 <asp:BoundField DataField="UserRollNo" HeaderText="RollNo" SortExpression="UserRollNo" />
@@ -17,8 +20,8 @@
                 <asp:BoundField DataField="TotalQuestions" HeaderText="Total" SortExpression="TotalQuestions" />
                 <asp:BoundField DataField="RightQuestions" HeaderText="Right" SortExpression="RightQuestions" />
                 <asp:BoundField DataField="WrongQuestions" HeaderText="Wrong" SortExpression="WrongQuestions" />
-                <asp:BoundField DataField="UnattemptedQuestions" HeaderText="Not Answered" SortExpression="UnattemptedQuestions" />
-                <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                <asp:BoundField DataField="UnattemptedQuestions" HeaderText="Un-Answered" SortExpression="UnattemptedQuestions" />
+                <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" Visible="False" />
             </Columns>
             
             <EmptyDataTemplate>
@@ -36,11 +39,12 @@
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
 
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" DeleteCommand="DELETE FROM [ExamData] WHERE [Id] = @Id" InsertCommand="INSERT INTO [ExamData] ([UserName], [UserEmail], [UserRollNo], [Course], [Semester], [Subject], [TotalQuestions], [RightQuestions], [WrongQuestions], [UnattemptedQuestions]) VALUES (@UserName, @UserEmail, @UserRollNo, @Course, @Semester, @Subject, @TotalQuestions, @RightQuestions, @WrongQuestions, @UnattemptedQuestions)" SelectCommand="SELECT [UserName], [UserEmail], [UserRollNo], [Course], [Semester], [Subject], [TotalQuestions], [RightQuestions], [WrongQuestions], [UnattemptedQuestions], [Id] FROM [ExamData]" UpdateCommand="UPDATE [ExamData] SET [UserName] = @UserName, [UserEmail] = @UserEmail, [UserRollNo] = @UserRollNo, [Course] = @Course, [Semester] = @Semester, [Subject] = @Subject, [TotalQuestions] = @TotalQuestions, [RightQuestions] = @RightQuestions, [WrongQuestions] = @WrongQuestions, [UnattemptedQuestions] = @UnattemptedQuestions WHERE [Id] = @Id">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" DeleteCommand="DELETE FROM [ExamData] WHERE [Id] = @Id" InsertCommand="INSERT INTO [ExamData] ([Time], [UserName], [UserEmail], [UserRollNo], [Course], [Semester], [Subject], [TotalQuestions], [RightQuestions], [WrongQuestions], [UnattemptedQuestions]) VALUES (@Time, @UserName, @UserEmail, @UserRollNo, @Course, @Semester, @Subject, @TotalQuestions, @RightQuestions, @WrongQuestions, @UnattemptedQuestions)" SelectCommand="SELECT [Time], [UserName], [UserEmail], [UserRollNo], [Course], [Semester], [Subject], [TotalQuestions], [RightQuestions], [WrongQuestions], [UnattemptedQuestions], [Id] FROM [ExamData]" UpdateCommand="UPDATE [ExamData] SET [Time] = @Time, [UserName] = @UserName, [UserEmail] = @UserEmail, [UserRollNo] = @UserRollNo, [Course] = @Course, [Semester] = @Semester, [Subject] = @Subject, [TotalQuestions] = @TotalQuestions, [RightQuestions] = @RightQuestions, [WrongQuestions] = @WrongQuestions, [UnattemptedQuestions] = @UnattemptedQuestions WHERE [Id] = @Id">
             <DeleteParameters>
                 <asp:Parameter Name="Id" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
+                <asp:Parameter Name="Time" Type="String" />
                 <asp:Parameter Name="UserName" Type="String" />
                 <asp:Parameter Name="UserEmail" Type="String" />
                 <asp:Parameter Name="UserRollNo" Type="String" />
@@ -53,6 +57,7 @@
                 <asp:Parameter Name="UnattemptedQuestions" Type="Int32" />
             </InsertParameters>
             <UpdateParameters>
+                <asp:Parameter Name="Time" Type="String" />
                 <asp:Parameter Name="UserName" Type="String" />
                 <asp:Parameter Name="UserEmail" Type="String" />
                 <asp:Parameter Name="UserRollNo" Type="String" />
@@ -68,5 +73,6 @@
         </asp:SqlDataSource>
 
     </div>
+        </div>
 </asp:Content>
 

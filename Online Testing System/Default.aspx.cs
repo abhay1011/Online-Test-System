@@ -32,9 +32,19 @@ public partial class _Default : System.Web.UI.Page
                 string password = passcom.ExecuteScalar().ToString().Replace(" ", "");
                 if (password == TB_Password.Text)
                 {
-                    string userName = "select name from UserData where email ='" + TB_Email.Text + "'";
-                    SqlCommand getUserName = new SqlCommand(userName, conn);
-                    Session["userName"] = getUserName.ExecuteScalar();
+                    string qry = "select name from UserData where email ='" + TB_Email.Text + "'";
+                    SqlCommand com = new SqlCommand(qry, conn);
+                    Session["userName"] =  com.ExecuteScalar();
+                    Session["userEmail"] = TB_Email.Text;
+                    qry = "select RollNo from UserData where email ='" + TB_Email.Text + "'";
+                    com = new SqlCommand(qry, conn);
+                    Session["userRollNo"] = com.ExecuteScalar();
+                    qry = "select Course from UserData where email ='" + TB_Email.Text + "'";
+                    com = new SqlCommand(qry, conn);
+                    Session["userCourse"] = com.ExecuteScalar();
+                    qry = "select Semester from UserData where email ='" + TB_Email.Text + "'";
+                    com = new SqlCommand(qry, conn);
+                    Session["userSemester"] = com.ExecuteScalar();
                     Response.Redirect("PagesUser/UserHome.aspx");
                 }
                 else

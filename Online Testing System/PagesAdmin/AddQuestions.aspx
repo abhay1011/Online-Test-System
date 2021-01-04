@@ -102,9 +102,19 @@
         </div>
     </div>
     <div>
-        <asp:GridView CssClass="table table-condensed table-hover" ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1">
+        <asp:GridView CssClass="table table-condensed table-hover" ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:TemplateField ShowHeader="False">
+                    <EditItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Update" Text="Update"></asp:LinkButton>
+                        &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                        &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
                 <asp:BoundField DataField="Question" HeaderText="Question" SortExpression="Question" />
                 <asp:BoundField DataField="option1" HeaderText="option1" SortExpression="option1" />
@@ -113,6 +123,19 @@
                 <asp:BoundField DataField="option4" HeaderText="option4" SortExpression="option4" />
                 <asp:BoundField DataField="answer" HeaderText="answer" SortExpression="answer" />
             </Columns>
+            <EditRowStyle BackColor="#999999" />
+            <EmptyDataTemplate>
+                <h3 class="auto-style1">No Questions added yet!</h3>
+            </EmptyDataTemplate>
+            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#E9E7E2" />
+            <SortedAscendingHeaderStyle BackColor="#506C8C" />
+            <SortedDescendingCellStyle BackColor="#FFFDF8" />
+            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" DeleteCommand="DELETE FROM [QuestionPaper] WHERE [Id] = @Id" InsertCommand="INSERT INTO [QuestionPaper] ([Question], [option1], [option2], [option3], [option4], [answer]) VALUES (@Question, @option1, @option2, @option3, @option4, @answer)" UpdateCommand="UPDATE [QuestionPaper] SET [Question] = @Question, [option1] = @option1, [option2] = @option2, [option3] = @option3, [option4] = @option4, [answer] = @answer WHERE [Id] = @Id">
             <DeleteParameters>

@@ -9,16 +9,26 @@
     <link href="~/CSS/Colors.css" rel="stylesheet" type="text/css" runat="server" />
     <link href="~/CSS/Default.css" rel="stylesheet" type="text/css" runat="server" />
     <link href="~/CSS/UserMaster.css" rel="stylesheet" type="text/css" runat="server" />
-    <link rel="preconnect" href="https://fonts.gstatic.com"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jura:wght@700&family=Russo+One&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jura:wght@700&family=Russo+One&display=swap" rel="stylesheet" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
             color: #FF0000;
         }
+        .gotoLogin{
+            padding:20px;
+            font-size:large;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:orangered;
+            font-weight:bold;
+        }
+        a{
+            text-decoration:none;
+        }
     </style>
 </head>
-<body  class="">
+<body class="">
     <form id="form1" runat="server">
         <div class="container-fluid px-1 px-md-5 px-lg-1  mx-auto">
             <div class="bg-header py-3">
@@ -49,7 +59,7 @@
                         <asp:RequiredFieldValidator ID="Email_Validator" runat="server" ErrorMessage="Please Enter Your Email Address" ControlToValidate="TB_Email" CssClass="auto-style1"></asp:RequiredFieldValidator>
                         <br />
                         <strong>
-                        <asp:Label ID="User_Exist_Label" runat="server" CssClass="auto-style1" Text=""></asp:Label>
+                            <asp:Label ID="User_Exist_Label" runat="server" CssClass="auto-style1" Text=""></asp:Label>
                         </strong>
                     </div>
                     <div class="mb-3 container">
@@ -93,8 +103,10 @@
                         <asp:Button class="btn btn-blue" ID="BTN_Register" runat="server" Text="Register" OnClick="BTN_Register_Click" />
                     </div>
                 </div>
+                <div class="gotoLogin">
+                    <a href="../Default.aspx">Go Back To Login</a>
+                </div>
 
-                <a href="../Default.aspx">Go Back To Login</a>
             </div>
             <div class="bg-header py-3">
                 <div class="row px-3">
