@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 public partial class PagesUser_QuestionPaper : System.Web.UI.Page
 {
-    static int totalDuration=Session["iuser"];
+    static int totalDuration;
     protected void Page_Init(object sender, EventArgs e)
     {
         generateQuestions();
@@ -19,19 +19,11 @@ public partial class PagesUser_QuestionPaper : System.Web.UI.Page
         if (Session["UserQuestionPaper"] != null)
         {
             Label_QP_Name.Text = Session["UserQuestionPaper"].ToString();
-
-
-
-           /* SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ConnectionString);
-            con.Open();
-            string qry = "select distinct duration from  QuestionPaper where subject ='" + Session["UserQuestionPaper"].ToString() + "'";
-            SqlCommand com = new SqlCommand(qry, con);
-            string temp = com.ExecuteScalar().ToString().Replace(" ", "");
-            totalDuration = Int32.Parse(temp);
+            totalDuration = Int32.Parse(Session["testDuration"].ToString());
             totalDuration *= 60;
-            Response.Write("<h1>" + totalDuration + temp + "</h1>");
-            con.Close();
-            */
+           // Response.Write("<h1>" + totalDuration+ "</h1>");
+           
+
         }
         else
         {
@@ -171,24 +163,7 @@ public partial class PagesUser_QuestionPaper : System.Web.UI.Page
 
 
 
-    //For Timer
-    static int min;
-    static int secLeft;
-    protected void Timer1_Tick(object sender, EventArgs e)
-    {   
-        min = totalDuration / 60;
-        secLeft = totalDuration % 60;
-        totalDuration = totalDuration - 1;
-        Label1.Text = min.ToString() + " : " + secLeft;
-        if (totalDuration < 1)
-        {
-            BTN_QP_Submit_Click(sender,e);
-        }
-    }
 
 
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Response.Write("<h1> Clicked </h1>");
-    }
+    protected int MyProperty { get { return totalDuration; } }
 }

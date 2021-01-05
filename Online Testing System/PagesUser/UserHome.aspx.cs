@@ -21,7 +21,6 @@ public partial class PagesUser_Default : System.Web.UI.Page
         SqlCommand com = new SqlCommand(qry, con);
         string temp = com.ExecuteScalar().ToString().Replace(" ", "");
         Session["testDuration"] = temp;
-       // Response.Write("<h1> Total Duration" + temp + "</h1>");
         con.Close();
         Response.Redirect("QuestionPaper.aspx");
     }

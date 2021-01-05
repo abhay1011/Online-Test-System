@@ -16,18 +16,7 @@
             <h2>
                 <asp:Label ID="Label_QP_Name" runat="server" Text=""></asp:Label>
             </h2>
-            <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick">
-            </asp:Timer>
-            Time Left :
-            <asp:UpdatePanel ID="UpdatePanel1"
-                runat="server">
-                <ContentTemplate>
-                    <asp:Label ID="Label1" runat="server"></asp:Label>
-                </ContentTemplate>
-                <Triggers>
-                    <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick"></asp:AsyncPostBackTrigger>
-                </Triggers>
-            </asp:UpdatePanel>
+            Time Left:<div id="countdown"></div>
         </div>
         <div class="card-body">
             <asp:GridView ID="GridView_Questions" AutoGenerateColumns="false" runat="server" EnableTheming="False" BorderStyle="None">
@@ -83,17 +72,28 @@
             <br />
         </div>
         <div>
-            <asp:Button UseSubmitBehavior="false" CssClass="btn-blue p-2" ID="BTN_QP_Submit" runat="server" Text="Submit" OnClick="BTN_QP_Submit_Click" />
+            <asp:Button ClientIDMode="Static" CssClass="btn-blue p-2" ID="BTN_QP_Submit" runat="server" Text="Submit" OnClick="BTN_QP_Submit_Click" />
         </div>
     </div>
-    <asp:Button ID="Button1" runat="server" Text="Button" ClientIDMode="Static" OnClientClick="" OnClick="Button1_Click"/>
     <script type="text/javascript">
-       // setInterval(checkFocus, 1000);
-        function checkFocus() {
-            var button = document.getElementById('Button1');
-            button.click();
-        }
 
+        var myDuration = "<%= MyProperty %>";
+        var min=0;
+        var sec;
+        setInterval(runTimer, 1000);
+        function runTimer() {
+            if (myDuration < 1) {
+                var button = document.getElementById('BTN_QP_Submit');
+                button.click();
+            }
+            else {
+                min = myDuration / 60;
+                sec = myDuration % 60;
+                document.getElementById("countdown").innerHTML = Math.floor(min)+ " : "+sec;
+            }
+            myDuration = myDuration - 1;
+        }
+  
     </script>
 </asp:Content>
 
