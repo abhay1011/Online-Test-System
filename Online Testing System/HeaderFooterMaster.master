@@ -19,6 +19,7 @@
 </head>
 <body class="">
     <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="container-fluid px-0">
             <div class="">
                 <div class="row px-3 headerColor">
