@@ -39,7 +39,7 @@ public partial class UserRegistration : System.Web.UI.Page
                     com.Parameters.AddWithValue("@password", TB_Password.Text);
                     com.ExecuteNonQuery();
 
-                Response.Redirect("~/PagesError/RegistrationSuccessfull.aspx");
+                Response.Redirect("~/PagesError/RegistrationSuccessful.aspx");
             
                 }
                 catch (Exception ex)

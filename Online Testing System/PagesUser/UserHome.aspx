@@ -6,6 +6,19 @@
         .coverPic{
            
         }
+        option{
+            padding:25px;
+        }
+        .myCard{
+            background-color:beige;
+            padding:10px;
+            font-weight:bold;
+            margin:20px;
+            border-radius:5px;
+        }
+        .myCard:hover{
+            background-color:aquamarine;
+        }
     </style>
 
 
@@ -13,18 +26,21 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="UserHeadPlaceholder" runat="Server">
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="UserPageContentPlaceholder" runat="Server">
-    <div class="container-fluid p-3 ">
-        <div class="row">
+    <div class="container-fluid p-3 " style="background-color:white">
+        <div class="row" style="">
             <div class="col-5">
                 <div class="card border-0 coverPic">
                     <div class="card-header">
                         <h2>Important Instructions</h2>
                     </div>
                     <div class="card-body">
-                        <div class="card-subtitle">1. Select the respective question paper</div>
-                        <div class="card-subtitle">2. You can submit your test only once</div>
-                        <div class="card-subtitle">3. You test reponse will be automatically recorded after time is over</div>
+                        <div class="myCard">1. Select the respective question paper</div>
+                        <div class="myCard">2. You can submit your test only once</div>
+                        <div class="myCard">3. You test reponse will be automatically recorded after time is over</div>
+                          <div class="myCard">4. Your browser window activity will be monitered</div>
+                           <div class="myCard">5. The test will get automatically submitted if you perform any other operation on the system during the test. </div>
                     </div>
+                    <div class=" card-footer"></div>
                 </div>
             </div>
             <div class="col-7 justify-content-center align-items-center ">

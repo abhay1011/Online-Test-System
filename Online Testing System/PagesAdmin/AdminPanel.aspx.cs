@@ -24,6 +24,9 @@ public partial class PagesAdmin_AdminPanel : System.Web.UI.Page
             getQry = "select count(*) from ExamData";
              com = new SqlCommand(getQry, conn);
             Label3.Text = com.ExecuteScalar().ToString();
+            getQry = "select count(*) from SubjectData";
+            com = new SqlCommand(getQry, conn);
+            Label4.Text = com.ExecuteScalar().ToString();
         }
         catch(Exception ex)
         {

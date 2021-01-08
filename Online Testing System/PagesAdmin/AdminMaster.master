@@ -56,7 +56,7 @@
                 <li><a href="ManageUser.aspx"><i class="fas fa-user"></i>Manage Users</a></li>
                 <li><a href="ManageSubjects.aspx"><i class="fas fa-book"></i>Manage Subjects</a></li>
                 <li><a href="CreateQuestionPaper.aspx"><i class="fas fa-plus-circle"></i>Create Question Paper</a></li>
-                <li><a href="ManageQuestionPaper.aspx"><i class="fas fa-buffer"></i>Manage Question Paper</a></li>
+                <li><a href="ManageQuestionPaper.aspx"><i class="fas fa-book"></i>Manage Question Paper</a></li>
                 <li><a href="ShowTestResult.aspx"><i class="fas fa-poll"></i>Test Result</a></li>
             </ul>
             <div class="social_media">

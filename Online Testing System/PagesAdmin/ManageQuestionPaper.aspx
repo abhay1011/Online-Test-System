@@ -15,20 +15,20 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="AdminContentPlaceholder" runat="Server">
     <div>
-        <div class="card coverPic noBorder">
+        <div class="card coverPic noBorder ">
             <div class="card-header">
                 <h3>Manage Question Paper</h3>
             </div>
-            <div class="card-body">
+            <div class="card-body ">
                 <div class="p-3">
                     <asp:DropDownList CssClass="drop-down" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="subject" DataValueField="subject" AutoPostBack="true">
                         <asp:ListItem Selected="True">Select Subject</asp:ListItem>
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" SelectCommand="SELECT DISTINCT subject FROM QuestionPaper"></asp:SqlDataSource>
-                    <asp:Button ID="DeleteButton" runat="server" Text="Delete This Paper" OnClick="DeleteButton_Click" />
+                    <asp:Button CssClass="mt-4" ID="DeleteButton" runat="server" Text="Delete This Paper" OnClick="DeleteButton_Click" />
                 </div>
                 <div>
-                    <asp:GridView CssClass="table table-condensed table-hover" ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2">
+                    <asp:GridView CssClass="table table-condensed table-hover " ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2">
                         <Columns>
                             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />

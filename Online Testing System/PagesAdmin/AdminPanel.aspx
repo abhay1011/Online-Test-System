@@ -3,15 +3,16 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="AdminHeadTagPlaceholder" runat="Server">
     <style>
        .adminPanel li{
+           border-radius:5px;
             padding:20px;
-            margin:10px;
+            margin:20px;
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-weight:bold;
         }
           .adminPanel li:hover{
               background-color:bisque;
-               color:orangered;
-               transform: scale(1.05);
+               color:saddlebrown;
+               transform: scale(1.02);
           }
     </style>
 </asp:Content>
@@ -27,7 +28,10 @@
                 <li style="background-color:bisque;">Total Registerd User : 
                     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 </li>
-                <li style="background-color: cadetblue"">Total Active Question Paper :
+                    <li style="background-color: cadetblue"">Total Active Subjects :
+                    <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                </li>
+                <li style="background-color:darkkhaki">Total Active Question Paper :
                     <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                 </li>
                 <li style="background-color:aliceblue">Total Test Submitted :
